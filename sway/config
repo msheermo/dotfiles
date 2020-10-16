@@ -233,6 +233,12 @@ bar {
 
 include /etc/sway/config.d/*
 
+### Fix applications to workspace
+bindsym $mod+m exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=spotify --file-forwarding com.spotify.Client @@u %U @@
+
+assign [class="Spotify"] 10
+assign [class="Ferdi"] 9
+
 ### STARTUP APPLICATIONS
 
 # pCloud drive
