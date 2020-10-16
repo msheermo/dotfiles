@@ -5,8 +5,10 @@
 ############################## 
 ### Variables
 
-# Logo key. Use Mod1 for Alt.
+# Logo key. Mod4 for SUPER
 set $mod Mod4
+# Mod 1 = Alt key
+set $meta Mod1
 
 # Set Tilix as default terminator
 set $term tilix
@@ -30,13 +32,10 @@ for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
 
-### Output configuration
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/sheerio/Pictures/ghost_in_the_shell_wallpaper_BEST_ONE.png fill
+output * bg /home/sheerio/Pictures/ghost_in_the_shell_wallpaper_BEST_ONE.png fit
 
 ### Idle configuration
-# Example configuration:
-#
 exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * dpms off"' \
@@ -77,14 +76,14 @@ input type:keyboard {
 #
 # Basics:
 #
-    # Start a terminal
-    bindsym $mod+Return exec $term
+# Start a terminal
+bindsym $mod+Return exec $term
 
-    # Kill focused window
-    bindsym $mod+Shift+q kill
+# Kill focused window
+bindsym $mod+Shift+q kill
 
-    # Start your launcher
-    bindsym $mod+d exec $menu
+# Start your launcher
+bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -112,6 +111,10 @@ input type:keyboard {
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+
+# move left and right through workspaces
+bindsym $meta+control+Left workspace prev 
+bindsym $meta+control+Right workspace next
 
 # Media keys
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -162,8 +165,9 @@ bindsym --release $mod+l exec swaylock -f -i /home/sheerio/Pictures/63678972-gho
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
     bindsym $mod+b splith
+    bindsym $mod+x exec notify-send "Changing split mode", split toggle
     bindsym $mod+v splitv
-
+# split mode toggle between horizontal and vertical (status displayed in bar)
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
@@ -220,14 +224,18 @@ bindsym $mod+r mode "resize"
 bar {
     position top
 
+    font Liberation Mono 10                                                                                                                                                                                                                 
+
+
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    status_command i3status-rs [FLAGS] <CONFIG_FILE>
+#    status_command while date +'%A %d-%m-%Y %H:%M:%S'; do sleep 1; done
 
     colors {
         statusline #ffffff
         background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        inactive_workspace #32323200 #6e9671 #5c5c5c
     }
 }
 
@@ -249,9 +257,10 @@ assign [class="Ferdi"] 9
 # swaybar
 # spotify on 10
 # dark theme for apps
-# workspace numbers readable
 # redshhift
 # resize ferdi
 # resize shortcuts
 # powerline git
-# 
+# notify area
+# screenshots (grim?)
+#
