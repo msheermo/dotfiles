@@ -1,14 +1,18 @@
-# Default config for sway
-# Copy this to ~/.config/sway/config and edit it to your liking.
-# Read `man 5 sway` for a complete reference.
-
+##############################
+# 			     #
+#    sheerio sway config     #
+# 			     #	
+############################## 
 ### Variables
-#
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
 # Set Tilix as default terminator
 set $term tilix
+
+# Font
+font pango: Liberation Mono 10
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -27,32 +31,23 @@ for_window [window_type="menu"] floating enable
 
 
 ### Output configuration
-#
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/default.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+output * bg /home/sheerio/Pictures/ghost_in_the_shell_wallpaper_BEST_ONE.png fill
 
 ### Idle configuration
-#
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' \
-#               resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000'
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
 # Example configuration:
 #
 #   input "2:14:SynPS/2_Synaptics_TouchPad" {
@@ -236,3 +231,8 @@ bar {
 }
 
 include /etc/sway/config.d/*
+
+### STARTUP APPLICATIONS
+
+# pCloud drive
+exec /home/sheerio/bin/pcloud
