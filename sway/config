@@ -224,18 +224,22 @@ bindsym $mod+r mode "resize"
 bar {
     position top
 
-    font Liberation Mono 10                                                                                                                                                                                                                 
+    font pango: Liberation Mono 10                                                                                                                                                                                                                 
 
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     status_command /usr/bin/i3status-rs /home/sheerio/.config/i3status/i3status.toml
-#    status_command while date +'%A %d-%m-%Y %H:%M:%S'; do sleep 1; done
 
     colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #6e9671 #5c5c5c
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #5ec986 #ffffff
+#        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
     }
 }
 
