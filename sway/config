@@ -125,7 +125,8 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessDown exec light -U 4
 bindsym XF86MonBrightnessUp exec light -A 4
 
-bindsym $mod+L swaylock -f -c /home/sheerio/dotfiles/swaylock/config
+# Manual Lock
+bindsym --release $mod+l exec loginctl lock-session
 
 #
 # Workspaces:
