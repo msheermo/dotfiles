@@ -244,4 +244,14 @@ bindsym $mod+m exec swaymsg exec flatpak run com.spotify.Client
 
 assign [class="Spotify"] 10
 assign [class="Ferdi"] 9
-assign [app_id="tilix"] 1
+
+# TODO
+# swaybar
+# spotify on 10
+# dark theme for apps
+# workspace numbers readable
+# redshhift
+# resize ferdi
+# resize shortcuts
+# powerline git
+# 
