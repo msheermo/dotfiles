@@ -1,10 +1,28 @@
-theme = "solarized-dark"
+theme = "modern"
 icons = "awesome"
+
+
+# not working with flatpak spotify at the moment
+#[[block]]
+#block = "music"
+#buttons = ["play", "next"]
+
+[[block]]
+block = "net"
+device = "wlp4s0"
+ip = true
+ssid = true
+interval = 5
+use_bits = false
+signal_strength = true
+speed_up = false
+speed_down = false
+
 
 [[block]]
 block = "disk_space"
-path = "/"
-alias = "/"
+path = "/home/"
+alias = "~"
 info_type = "available"
 unit = "GB"
 interval = 20
@@ -21,15 +39,20 @@ format_swap = "{SUp}%"
 block = "cpu"
 interval = 1
 
-[[block]]
-block = "load"
-interval = 1
-format = "{1m}"
 
 [[block]]
 block = "sound"
 
 [[block]]
+block = "backlight"
+
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}% {time}"
+
+[[block]]
 block = "time"
-interval = 60
-format = "%a %d/%m %R"
+interval = 1
+format = "%a %d-%m-%Y %H:%M:%S"
