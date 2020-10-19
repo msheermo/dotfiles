@@ -217,6 +217,20 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+bindsym Ctrl+$meta+Left        resize shrink width 50 px
+bindsym Ctrl+$meta+Right       resize grow width 50 px
+bindsym Ctrl+$meta+Down          resize shrink height 40 px
+bindsym Ctrl+$meta+Up        resize grow height 40 px
+
+# Resize in percent
+bindsym $meta+Ctrl++ resize set width 75 ppt
+bindsym $meta+Ctrl+= resize set width 50 ppt
+bindsym $meta+Ctrl+- resize set width 33 ppt
+
+
+# New window only 33% size
+for_window [class=".*"] resize set width 33 ppt
+
 # Screenshots
 # region to 
 bindsym Mod4+Ctrl+p  exec ~/bin/grimshot --notify save window clipboard

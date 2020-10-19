@@ -2,13 +2,11 @@ max-visible=1
 anchor=top-center
 font=Liberation Mono 9
 default-timeout=3000
-width=500
+width=400
 
 # Matrix colors
 background-color=#020203
-text-color=#80ce87
+text-color=#ffffff
 border-color=#020203
 icons=1
-
 max-icon-size=32
-
