@@ -217,15 +217,15 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-bindsym Ctrl+$meta+Left        resize shrink width 50 px
-bindsym Ctrl+$meta+Right       resize grow width 50 px
-bindsym Ctrl+$meta+Down          resize shrink height 40 px
-bindsym Ctrl+$meta+Up        resize grow height 40 px
+bindsym Shift+$meta+Left        resize shrink width 50 px
+bindsym Shift+$meta+Right       resize grow width 50 px
+bindsym Shift+$meta+Down          resize shrink height 40 px
+bindsym Shift+$meta+Up        resize grow height 40 px
 
 # Resize in percent
-bindsym $meta+Ctrl++ resize set width 75 ppt
-bindsym $meta+Ctrl+= resize set width 50 ppt
-bindsym $meta+Ctrl+- resize set width 33 ppt
+bindsym $meta+Ctrl+j resize set width 75 ppt
+bindsym $meta+Ctrl+k resize set width 50 ppt
+bindsym $meta+Ctrl+l resize set width 33 ppt
 
 
 # New window only 33% size
@@ -278,6 +278,9 @@ exec /usr/bin/ckb-next
 ### Fix applications to workspace
 bindsym $mod+m exec swaymsg exec flatpak run com.spotify.Client
 
+# redshift fork
+exec gammastep-indicator
+
 assign [class="Spotify"] 10
 assign [class="Ferdi"] 9
 
@@ -285,7 +288,6 @@ assign [class="Ferdi"] 9
 # swaybar
 # spotify on 10
 # dark theme for apps
-# redshhift
 # resize ferdi
 # resize shortcuts
 # powerline git
