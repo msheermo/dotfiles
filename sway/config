@@ -219,10 +219,10 @@ bindsym $mod+r mode "resize"
 
 # Screenshots
 # region to 
-bindsym Mod4+Ctrl+p  exec grimshot --notify save window clipboard
-bindsym Mod4+Mod1+p  exec grimshot --notify save output
-bindsym Mod4+Shift+p exec grimshot --notify save area 
-bindsym Mod4+p       exec grimshot --notify save active  
+bindsym Mod4+Ctrl+p  exec ~/bin/grimshot --notify save window clipboard
+bindsym Mod4+Mod1+p  exec ~/bin/grimshot --notify save output
+bindsym Mod4+Shift+p exec ~/bin/grimshot --notify save area 
+bindsym Mod4+p       exec ~/bin/grimshot --notify save active  
 
 
 
