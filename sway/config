@@ -249,7 +249,7 @@ include /etc/sway/config.d/*
 
 # pCloud drive
 exec /home/sheerio/bin/pcloud
-
+exec /usr/bin/ckb-next
 
 ### Fix applications to workspace
 bindsym $mod+m exec swaymsg exec flatpak run com.spotify.Client
