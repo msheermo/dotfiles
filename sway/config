@@ -37,11 +37,10 @@ output * bg /home/sheerio/Pictures/ghost_in_the_shell_wallpaper_BEST_ONE.png fit
 
 ### Idle configuration
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * dpms off"' \
-              resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c /home/sheerio/dotfiles/swaylock/config'
-
+        timeout 300 'swaylock -f -c 000000' \
+        timeout 600 'swaymsg "output * dpms off"' \
+        resume 'swaymsg "output * dpms on"' \
+        before-sleep 'swaylock -f -c /home/sheerio/dotfiles/swaylock/config'
 
 
 ### Input configuration
@@ -267,16 +266,8 @@ exec gammastep-indicator
 # SpiderOak Groups backup solution
 exec /usr/bin/SpiderOakGroups
 
-
-
-
 # TODO
-
 
 # dark theme for apps
 # resize ferdi
-# resize shortcuts
 # powerline git
-# notify area
-# screenshots (grim?)
-#
