@@ -19,7 +19,7 @@ font pango: Liberation Mono 10
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 
 # Floating dialogs and other stuff
@@ -30,7 +30,7 @@ for_window [window_role="Preferences"] floating enable
 for_window [window_role="About"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
-
+for_window [class="Ulauncher"] floating enable border pixel 0
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/sheerio/Pictures/ghost_in_the_shell_wallpaper_BEST_ONE.png fit
@@ -222,6 +222,9 @@ bindsym Mod4+Mod1+p  exec ~/bin/grimshot --notify save output
 bindsym Mod4+Shift+p exec ~/bin/grimshot --notify save area 
 bindsym Mod4+p       exec ~/bin/grimshot --notify save active  
 
+# Ulauncher
+set $menu ulauncher-toggle
+
 ### Spotify Music
 bindsym $mod+m exec swaymsg exec flatpak run com.spotify.Client
 
@@ -266,6 +269,7 @@ exec gammastep-indicator
 # SpiderOak Groups backup solution
 exec /usr/bin/SpiderOakGroups
 
+exec /usr/bin/ulauncher --hide-window 
 # TODO
 
 # dark theme for apps
