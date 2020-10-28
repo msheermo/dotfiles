@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+
+import i3ipc
+import subprocess
+import re
+
+i3 = i3ipc.Connection()
+
+def get_scratchpad_windows():
+    scratchpad_containers = i3.get_tree().scratchpad().descendants()
+    return filter(lambda c: c.type == 'con' and c.name, scratchpad_containers)
+
+def dmenu_choose(options):
+    """ Show a dmenu to choose a string item from a list of *options*. """
+    #dmenu_process = subprocess.Popen(["dmenu", "-nb","#586e75","-nf","#000000","-sb","#000000","-sf","#FFDC48","-fn","terminus-9","-i","-p","Retrieve from scratchpad > ","-l","10"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    dmenu_process = subprocess.Popen(["rofi", "-font", "Fira Code Nerd Font Medium 10", "-width", "20", "-lines", "10", "-theme", "Arc-Dark", "-dmenu", "-p", "Scratchpad"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    stdoutdata, _ = dmenu_process.communicate("\n".join(options).encode())
+    return stdoutdata.decode('utf-8')
+
+def main():
+    # Count how many apps in scratchpad
+    list = []
+    for leaf in i3.get_tree().scratchpad().leaves():
+        listing = list.append(leaf)
+
+    # shows the only app immediately
+    if len(list) == 1:
+        i3.command('scratchpad show')
+    # otherwise show a dmenu
+    else:
+        scratchpad_windows = get_scratchpad_windows()
+        window_titles = [w.name for w in scratchpad_windows]
+        if window_titles:
+            window_to_restore = re.escape(dmenu_choose(window_titles).strip())
+            i3.command('[title="{}"] scratchpad show'.format(window_to_restore))
+
+if __name__ == '__main__':
+    main()
