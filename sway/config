@@ -31,6 +31,7 @@ for_window [window_role="About"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 for_window [class="Ulauncher"] floating enable border pixel 0
+for_window [class="keepassxc"] floating enable 
 
 # # Set inner/outer gaps
 # gaps inner 0
@@ -74,7 +75,7 @@ bindsym $mod+Shift+q kill
 # Start your launcher
 bindsym $mod+d exec $menu
 
-    # Drag floating windows by holding down $mod and left mouse button.
+    # Drag 9floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
