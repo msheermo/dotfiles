@@ -335,6 +335,7 @@ exec /home/sheerio/bin/pcloud
 exec /usr/bin/ulauncher --hide-window 
 # TODO
 
-# dark theme for apps
-# resize ferdi
 # powerline git
+# test seb scratchpad script
+# meta Z for scratchpad
+# rednotebook shortcut
