@@ -54,7 +54,7 @@ exec swayidle -w \
 input type:touchpad {
     accel_profile adaptive
     dwt enabled
-    pointer_accel 0.65
+    pointer_accel 0.75
     tap disabled
 }
 
