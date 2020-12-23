@@ -13,6 +13,9 @@ set $meta Mod1
 # Set Tilix as default terminator
 set $term tilix
 
+# run X11 apps
+xwayland enable
+
 # Font
 font pango: Liberation Mono 10
 
