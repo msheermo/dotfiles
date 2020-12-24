@@ -5,11 +5,12 @@ icons = "awesome"
 # not working with flatpak spotify at the moment
 #[[block]]
 #block = "music"
+#player = "spotify"
 #buttons = ["play", "next"]
 
 [[block]]
 block = "net"
-device = "wlp4s0"
+device = "wlp82s0"
 ip = true
 ssid = true
 interval = 5

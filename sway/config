@@ -111,17 +111,23 @@ bindsym $mod+Shift+Right move right
 bindsym $meta+control+Left workspace prev 
 bindsym $meta+control+Right workspace next
 
+# wob config
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+
 # Media keys
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
+bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
+
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym XF86MonBrightnessDown exec light -U 4
-bindsym XF86MonBrightnessUp exec light -A 4
+bindsym XF86MonBrightnessDown exec brightnessctl set 2%- && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )
+bindsym XF86MonBrightnessUp exec brightnessctl set +2% && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )
+
+
 
 # Manual Lock
 bindsym --release $mod+l exec swaylock -f -i /home/sheerio/Pictures/63678972-ghost-in-the-shell-wallpapers.jpg
@@ -340,7 +346,7 @@ exec /usr/bin/ckb-next
 exec gammastep-indicator
 
 # SpiderOak Groups backup solution
-exec /usr/bin/SpiderOakGroups
+#exec /usr/bin/SpiderOakGroups
 
 # pCloud drive
 exec /home/sheerio/bin/pcloud

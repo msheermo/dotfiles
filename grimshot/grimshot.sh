@@ -90,7 +90,8 @@ check() {
 takeScreenshot() {
   FILE=$1
   GEOM=$2
-  OUTPUT=$3
+  OUTPUT=/home/sheerio/Pictures/grimshot-screenshots
+#  OUTPUT=$3
   if [ ! -z "$OUTPUT" ]; then
     grim -o "$OUTPUT" "$FILE" || die "Unable to invoke grim"
   elif [ -z "$GEOM" ]; then
