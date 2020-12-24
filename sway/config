@@ -13,6 +13,9 @@ set $meta Mod1
 # Set Tilix as default terminator
 set $term tilix
 
+# run X11 apps
+xwayland enable
+
 # Font
 font pango: Liberation Mono 10
 
@@ -149,12 +152,17 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+bindsym $mod+b workspace back_and_forth
+bindsym $mod+Shift+b move container to workspace back_and_forth
+
+
+
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
+    bindsym $mod+h splith
     bindsym $mod+x exec notify-send "Changing split mode", split toggle
     bindsym $mod+v splitv
 # split mode toggle between horizontal and vertical (status displayed in bar)
