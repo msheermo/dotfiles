@@ -9,6 +9,9 @@ icons = "awesome"
 #buttons = ["play", "next"]
 
 [[block]]
+block = "uptime"
+
+[[block]]
 block = "net"
 device = "wlp82s0"
 ip = true
