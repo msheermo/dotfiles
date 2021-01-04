@@ -95,21 +95,44 @@ bindsym $mod+Shift+c reload
 #
 # Moving around:
 #
-# Or use $mod+[up|down|left|right]
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# # Or use $mod+[up|down|left|right]
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
+
+# # Move windows around within workplace
+# bindsym $mod+Shift+Left move left
+# bindsym $mod+Shift+Down move down
+# bindsym $mod+Shift+Up move up
+# bindsym $mod+Shift+Right move right
+
+# # move left and right through workspaces
+# bindsym $meta+control+Left workspace prev 
+# bindsym $meta+control+Right workspace next
+
+
+# Use VIM keybindings
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # Move windows around within workplace
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
-# move left and right through workspaces
+# move left and right through workspaces a
+bindsym $meta+control+h workspace prev 
+bindsym $meta+control+l workspace next
+# move left and right with arrow keys
 bindsym $meta+control+Left workspace prev 
 bindsym $meta+control+Right workspace next
+
+
+
 
 # wob config
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
@@ -130,7 +153,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +2% && ( echo $((`brightnessc
 
 
 # Manual Lock
-bindsym --release $mod+l exec swaylock -f -i /home/sheerio/Pictures/63678972-ghost-in-the-shell-wallpapers.jpg
+bindsym --release $mod+g exec swaylock -f -i /home/sheerio/Pictures/63678972-ghost-in-the-shell-wallpapers.jpg
 # Auto lock and screen off
 set $locker 'swaylock -f -i /home/sheerio/Pictures/63678972-ghost-in-the-shell-wallpapers.jpg'
 exec swayidle -w \
@@ -176,7 +199,7 @@ bindsym $mod+Shift+b move container to workspace back_and_forth
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+h splith
+    bindsym $mod+c splith
     bindsym $mod+x exec notify-send "Changing split mode", split toggle
     bindsym $mod+v splitv
 # split mode toggle between horizontal and vertical (status displayed in bar)
@@ -239,9 +262,9 @@ bindsym Shift+$meta+Down          resize shrink height 40 px
 bindsym Shift+$meta+Up        resize grow height 40 px
 
 # Resize in percent
-bindsym $meta+Ctrl+j resize set width 75 ppt
-bindsym $meta+Ctrl+k resize set width 50 ppt
-bindsym $meta+Ctrl+l resize set width 40 ppt
+bindsym $meta+j resize set width 75 ppt
+bindsym $meta+k resize set width 50 ppt
+bindsym $meta+l resize set width 40 ppt
 
 
 # New window only 33% size
