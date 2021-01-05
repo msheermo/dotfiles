@@ -261,6 +261,11 @@ bindsym Shift+$meta+Right       resize grow width 70 px
 bindsym Shift+$meta+Down          resize shrink height 40 px
 bindsym Shift+$meta+Up        resize grow height 40 px
 
+bindsym Shift+$meta+h        resize shrink width 70 px
+bindsym Shift+$meta+l       resize grow width 70 px
+bindsym Shift+$meta+j          resize shrink height 40 px
+bindsym Shift+$meta+k       resize grow height 40 px
+
 # Resize in percent
 bindsym $meta+j resize set width 75 ppt
 bindsym $meta+k resize set width 50 ppt
