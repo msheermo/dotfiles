@@ -22,5 +22,9 @@ call plug#begin('~/.vim/plugged')
 " NERDtree
   Plug 'preservim/nerdtree'
 
+" fuzzyfinder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 " Initialize plugin system
 call plug#end()
