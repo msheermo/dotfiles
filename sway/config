@@ -390,5 +390,8 @@ exec /home/sheerio/bin/pcloud
 exec /usr/bin/ulauncher --hide-window 
 # TODO
 
-# powerline git
 # test seb scratchpad script
+# fix certain apps to workspaces
+# waybar to replace i3-status
+# add arrow navigation back (don't replace vim)
+#
