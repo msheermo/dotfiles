@@ -287,7 +287,7 @@ set $menu ulauncher-toggle
 ### Spotify Music
 bindsym $mod+m exec swaymsg exec flatpak run com.spotify.Client
 ### Rednotebook
-bindsym $mod+i exec /usr/bin/rednotebook
+bindsym $mod+i exec /home/sheerio/.joplin/Joplin.AppImage
 
 
 # Status Bar:
