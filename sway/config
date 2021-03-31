@@ -93,24 +93,6 @@ bindsym $mod+Shift+c reload
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
-# Moving around:
-#
-# # Or use $mod+[up|down|left|right]
-# bindsym $mod+Left focus left
-# bindsym $mod+Down focus down
-# bindsym $mod+Up focus up
-# bindsym $mod+Right focus right
-
-# # Move windows around within workplace
-# bindsym $mod+Shift+Left move left
-# bindsym $mod+Shift+Down move down
-# bindsym $mod+Shift+Up move up
-# bindsym $mod+Shift+Right move right
-
-# # move left and right through workspaces
-# bindsym $meta+control+Left workspace prev 
-# bindsym $meta+control+Right workspace next
-
 
 # Use VIM keybindings
 bindsym $mod+h focus left
