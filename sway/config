@@ -344,24 +344,24 @@ bar {
 
 # green gruvbox
 # class                 border|backgr|text|indicator|child_border
-#client.focused          $green $green $darkgray $purple $darkgray
-#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
-#client.urgent           $red $red $white $red $red
+client.focused          $blue $darkgray $yellow $darkgray $darkgray
+client.focused_inactive $darkgray $darkgray $aqua $darkgray $darkgray
+client.unfocused        $darkgray $darkgray $aqua $darkgray $darkgray
+client.urgent           $red $red $white $red $red
 
 # blue gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $darkgray $darkgray $yellow $purple $darkgray
-client.focused_inactive $darkgray $darkgray $aqua $purple $darkgray
-client.unfocused        $darkgray $darkgray $gray $purple $darkgray
-client.urgent           $red $red $white $red $red
+#client.focused          $darkgray $darkgray $yellow $darkgray $green
+#client.focused_inactive $darkgray $darkgray $aqua $darkgray $darkgray
+#client.unfocused        $darkgray $darkgray $gray $purple $darkgray
+#client.urgent           $red $red $white $red $red
 
 #end of window title bars & borders section
 
 include /etc/sway/config.d/*
 
 ### STARTUP APPLICATIONS
-
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # Mouse utility (why doesn't it hide...)
 exec /usr/bin/ckb-next
