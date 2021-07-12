@@ -275,7 +275,7 @@ set $menu ulauncher-toggle
 ### Spotify Music
 bindsym $mod+m exec swaymsg exec flatpak run com.spotify.Client
 ### Rednotebook
-bindsym $mod+i exec /home/sheerio/.joplin/Joplin.AppImage
+bindsym $mod+i exec /usr/bin/rednotebook
 
 
 # Status Bar:
@@ -345,8 +345,8 @@ bar {
 # green gruvbox
 # class                 border|backgr|text|indicator|child_border
 client.focused          $blue $darkgray $yellow $darkgray $darkgray
-client.focused_inactive $darkgray $darkgray $aqua $darkgray $darkgray
-client.unfocused        $darkgray $darkgray $aqua $darkgray $darkgray
+client.focused_inactive $darkgray $darkgray $aqua $gray $darkgray
+client.unfocused        $darkgray $darkgray $aqua $gray $darkgray
 client.urgent           $red $red $white $red $red
 
 # blue gruvbox
@@ -367,10 +367,9 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec /usr/bin/ckb-next
 
 # redshift fork
-exec gammastep-indicator
+#exec gammastep-indicator
+# gammastep currently broken
 
-# SpiderOak Groups backup solution
-#exec /usr/bin/SpiderOakGroups
 
 # pCloud drive
 exec /home/sheerio/bin/pcloud
