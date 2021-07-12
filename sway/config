@@ -277,6 +277,9 @@ bindsym $mod+m exec swaymsg exec flatpak run com.spotify.Client
 ### Rednotebook
 bindsym $mod+i exec /usr/bin/rednotebook
 
+### wlsunset replaces gammastep
+wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
+
 
 # Status Bar:
 #
