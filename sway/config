@@ -126,8 +126,8 @@ bindsym $meta+control+Right workspace next
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 # Media keys
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% > $SWAYSOCK.wob 
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% > $SWAYSOCK.wob 
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2% > $SWAYSOCK.wob 
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2% > $SWAYSOCK.wob 
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle > $SWAYSOCK.wob 
 
 
