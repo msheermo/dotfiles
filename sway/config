@@ -126,9 +126,10 @@ bindsym $meta+control+Right workspace next
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 # Media keys
-bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
-bindsym XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
-bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% > $SWAYSOCK.wob 
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% > $SWAYSOCK.wob 
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle > $SWAYSOCK.wob 
+
 
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -137,7 +138,6 @@ bindsym XF86AudioPrev exec playerctl previous
 
 bindsym XF86MonBrightnessDown exec brightnessctl set 2%- && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )
 bindsym XF86MonBrightnessUp exec brightnessctl set +2% && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )
-
 
 
 # Manual Lock
@@ -151,9 +151,7 @@ exec swayidle -w \
     resume 'swaymsg "output * dpms on"' \
     before-sleep $locker
 
-#
 # Workspaces:
-#
 # Switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -277,8 +275,6 @@ bindsym $mod+m exec swaymsg exec flatpak run com.spotify.Client
 ### Rednotebook
 bindsym $mod+i exec /usr/bin/rednotebook
 
-### wlsunset replaces gammastep
-wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
 
 
 # Status Bar:
@@ -372,6 +368,8 @@ exec /usr/bin/ckb-next
 # redshift fork
 #exec gammastep-indicator
 # gammastep currently broken
+# wlsunset replaces gammastep
+exec wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
 
 
 # pCloud drive
