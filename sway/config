@@ -42,6 +42,8 @@ for_window [class="rednotebook"] floating enable
 # gaps inner 0
 # gaps outer 0
 
+
+
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps off
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -61,6 +63,7 @@ input type:touchpad {
     dwt enabled
     pointer_accel 0.85
     tap disabled
+    scroll_factor 20
 }
 
 input type:keyboard {
@@ -112,9 +115,6 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# move left and right through workspaces a
-bindsym $meta+h workspace prev 
-bindsym $meta+g workspace next
 # move left and right with arrow keys
 bindsym $meta+control+Left workspace prev 
 bindsym $meta+control+Right workspace next
@@ -253,7 +253,7 @@ bindsym Shift+$meta+j          resize shrink height 40 px
 bindsym Shift+$meta+k       resize grow height 40 px
 
 # Resize in percent
-bindsym $meta+j resize set width 75 ppt
+bindsym $meta+j resize set width 95 ppt
 bindsym $meta+k resize set width 50 ppt
 bindsym $meta+l resize set width 40 ppt
 
