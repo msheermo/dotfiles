@@ -63,7 +63,7 @@ input type:touchpad {
     dwt enabled
     pointer_accel 0.85
     tap disabled
-    scroll_factor 20
+    scroll_factor 2
 }
 
 input type:keyboard {
@@ -365,12 +365,9 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 # Mouse utility (why doesn't it hide...)
 exec /usr/bin/ckb-next
 
-# redshift fork
-#exec gammastep-indicator
-# gammastep currently broken
 # wlsunset replaces gammastep
 exec wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
-
+#exec gammastep-indicator
 
 # pCloud drive
 exec /home/sheerio/bin/pcloud
