@@ -70,6 +70,10 @@ input type:keyboard {
     xkb_numlock enabled
 }
 
+### Monitor output configuration wit HDMI
+
+output DP-1 pos 1920 0
+output eDP-1 pos 0 0
 
 
 ### Key bindings
