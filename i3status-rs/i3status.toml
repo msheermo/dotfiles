@@ -54,6 +54,12 @@ block = "battery"
 interval = 10
 format = "{percentage}% {time}"
 
+
+[[block]]
+block = "bluetooth"
+mac = "E8:07:BF:44:4B:32"
+
+
 [[block]]
 block = "sound"
 
