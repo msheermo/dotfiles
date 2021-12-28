@@ -43,11 +43,8 @@ format_swap = "{SUp}%"
 block = "cpu"
 interval = 1
 
-
-
 [[block]]
 block = "backlight"
-
 
 [[block]]
 block = "battery"
@@ -56,12 +53,12 @@ format = "{percentage}% {time}"
 
 
 [[block]]
-block = "bluetooth"
-mac = "E8:07:BF:44:4B:32"
-
-
-[[block]]
 block = "sound"
+
+#[[block]]
+#block = "bluetooth"
+#mac = "E8:07:BF:44:4B:32"
+
 
 [[block]]
 block = "time"
