@@ -329,6 +329,8 @@ set $darkgray #1d2021
 set $white #ffffff
     font pango: Liberation Mono 10     
 
+#start of window title bars & borders section
+
 #start of bar section
 bar {
     position top
@@ -348,7 +350,6 @@ bar {
 }
 #end of bar section
 
-#start of window title bars & borders section
 
 # green gruvbox
 # class                 border|backgr|text|indicator|child_border
@@ -357,14 +358,39 @@ client.focused_inactive $darkgray $darkgray $aqua $gray $darkgray
 client.unfocused        $darkgray $darkgray $aqua $green $darkgray
 client.urgent           $red $red $white $red $red
 
-# blue gruvbox
-# class                 border|backgr|text|indicator|child_border
-#client.focused          $darkgray $darkgray $yellow $darkgray $green
-#client.focused_inactive $darkgray $darkgray $aqua $darkgray $darkgray
-#client.unfocused        $darkgray $darkgray $gray $purple $darkgray
-#client.urgent           $red $red $white $red $red
 
 #end of window title bars & borders section
+
+
+### START dracula Theme
+# class                 border  bground text    indicator child_border
+
+# uncomment from here:
+# client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+# client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+# client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+# client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+# client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+# client.background       #F8F8F2
+
+# bar {
+#   colors {
+#     background #282A36
+#     statusline #F8F8F2
+#     separator  #44475A
+
+#     focused_workspace  #44475A #44475A #F8F8F2
+#     active_workspace   #282A36 #44475A #F8F8F2
+#     inactive_workspace #282A36 #282A36 #BFBFBF
+#     urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#     binding_mode       #FF5555 #FF5555 #F8F8F2
+#   }
+# }
+
+### END dracula theme
+
+
 
 include /etc/sway/config.d/*
 
@@ -382,10 +408,8 @@ exec wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
 exec /home/sheerio/bin/pcloud
 
 exec /usr/bin/ulauncher --hide-window 
-# TODO
 
-# test seb scratchpad script
-# fix certain apps to workspaces
+
+# TODO
 # waybar to replace i3-status
-# add arrow navigation back (don't replace vim)
-#
+
