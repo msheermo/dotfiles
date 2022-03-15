@@ -41,7 +41,7 @@ alias df='df -H'
 alias du='du -ch'
 alias docker=podman
 # cowsay en fortune
-fortune | cowsay
+fortune | cowsay -s
 # kcli autocomplete
 eval "$(register-python-argcomplete kcli)"
 

@@ -30,5 +30,11 @@ call plug#begin('~/.vim/plugged')
 " vim-ansible
   Plug 'pearofducks/ansible-vim' 
 
+" dracula colorscheme
+  Plug 'dracula/vim', { 'as': 'dracula' }
+
+" everforest colorscheme  
+  Plug 'sainnhe/everforest'
+
 " Initialize plugin system
 call plug#end()

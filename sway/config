@@ -354,7 +354,7 @@ bar {
 # class                 border|backgr|text|indicator|child_border
 client.focused          $blue $darkgray $yellow $yellow $blue
 client.focused_inactive $darkgray $darkgray $aqua $gray $darkgray
-client.unfocused        $darkgray $darkgray $aqua $gray $darkgray
+client.unfocused        $darkgray $darkgray $aqua $green $darkgray
 client.urgent           $red $red $white $red $red
 
 # blue gruvbox
