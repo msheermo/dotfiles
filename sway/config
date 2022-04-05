@@ -150,9 +150,10 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +2% && ( echo $((`brightnessc
 
 
 # Manual Lock
-bindsym --release $mod+g exec swaylock -f -i /home/sheerio/Pictures/63678972-ghost-in-the-shell-wallpapers.jpg
+bindsym --release $mod+g exec swaylock -f -i /home/sheerio/Pictures/ghost_in_the_shell_3faces.jpeg
+
 # Auto lock and screen off
-set $locker 'swaylock -f -i /home/sheerio/Pictures/63678972-ghost-in-the-shell-wallpapers.jpg'
+set $locker 'swaylock -f -i /home/sheerio/Pictures/ghost_in_the_shell_3faces.jpeg'
 exec swayidle -w \
     timeout 300 $locker \
     timeout 900 'swaymsg "output * dpms off"' \
