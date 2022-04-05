@@ -36,5 +36,8 @@ call plug#begin('~/.vim/plugged')
 " everforest colorscheme  
   Plug 'sainnhe/everforest'
 
+" gruvbox colorscheme  
+  Plug 'sainnhe/gruvbox-material'
+
 " Initialize plugin system
 call plug#end()
