@@ -1,0 +1,5 @@
+# config file for zathura
+# link to: ~/.config/zathura/zathurarc
+
+set selection-clipboard clipboard
+
