@@ -193,6 +193,8 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth
 
 
+# Launch apps in certain workspaces
+assign [class="^Spotify$"] → 8
 
 # Layout stuff:
 #
@@ -286,8 +288,8 @@ set $menu ulauncher-toggle
 
 ### Spotify Music
 bindsym $mod+m exec swaymsg exec flatpak run com.spotify.Client
-### Rednotebook
-bindsym $mod+i exec /usr/bin/rednotebook
+### Obsidian
+bindsym $mod+i exec swaymsg exec flatpak md.obsidian.Obsidian
 
 
 
@@ -297,13 +299,9 @@ bindsym $mod+i exec /usr/bin/rednotebook
 # bar {
 #     position top
 
-#     font pango: Liberation Mono 10                                                                                                                                                                                                                 
-
-
-#     # When the status_command prints a new line to stdout, swaybar updates.
+#     font pango: Liberation Mono 10                                                                    #     # When the status_command prints a new line to stdout, swaybar updates.
 #     # The default just shows the current date and time.
 #     status_command /usr/bin/i3status-rs /home/sheerio/.config/i3status/i3status.toml
-
 #     colors {
 #         separator #666666
 #         background #222222
