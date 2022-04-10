@@ -64,12 +64,16 @@ input type:touchpad {
     pointer_accel 0.85
     tap disabled
     scroll_factor 2
+# deze zijn nieuw
+    click_method button_areas
+    natural_scroll enabled
+    scroll_method two_finger
+
 }
 
 input type:keyboard {
     xkb_numlock enabled
 }
-
 ### Monitor output configuration wit HDMI
 
 output DP-1 pos 1920 0
