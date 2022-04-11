@@ -76,7 +76,7 @@ input type:keyboard {
 }
 ### Monitor output configuration wit HDMI
 
-output DP-1 pos 1920 0
+output DP-1 pos 3840 0
 output eDP-1 pos 0 0
 
 
