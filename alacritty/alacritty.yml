@@ -33,35 +33,30 @@ font:
 draw_bold_text_with_bright_colors: true
 # Colors (Tomorrow Night Bright)
 colors:
-  # Default colors
+  name: Garuda (dr460nized)
+  author: dr460nf1r3
   primary:
-    background: '#292C3E'
-    foreground: '#EBEBEB'
-
-  # Cursor colors
+    background: '0x0a1124'
+    foreground: '0xeec49a'
   cursor:
-    text: '#FF261E'
-    cursor: '#FF261E'
-
-  # Normal colors
+    text: '0x0a1124'
+    cursor: '0xeec49a'
   normal:
-    black: '#0d0d0d'
-    red: '#FF301B'
-    green: '#A0E521'
-    yellow: '#FFC620'
-    blue: '#1BA6FA'
-    magenta: '#8763B8'
-    cyan: '#21DEEF'
-    white: '#EBEBEB'
-
-  # Bright colors
+    black: '0x0a1124'
+    red: '0x5F4149'
+    green: '0xEB3247'
+    yellow: '0xBC4349'
+    blue: '0xF35645'
+    magenta: '0xF6A73B'
+    cyan: '0xFAD32F'
+    white: '0xeec49a'
   bright:
-    black: '#6D7070'
-    red: '#FF4352'
-    green: '#B8E466'
-    yellow: '#FFD750'
-    blue: '#1BA6FA'
-    magenta: '#A578EA'
-    cyan: '#73FBF1'
-    white: '#FEFEF8'
-theme: Argonaut
+    black: '0xa6896b'
+    red: '0x5F4149'
+    green: '0xEB3247'
+    yellow: '0xBC4349'
+    blue: '0xF35645'
+    magenta: '0xF6A73B'
+    cyan: '0xFAD32F'
+    white: '0xeec49a'
+theme: Garuda.dr460nized

@@ -21,7 +21,7 @@ use_bits = false
 signal_strength = true
 speed_up = false
 speed_down = false
-
+on_click = "alacritty -e nmtui"
 
 [[block]]
 block = "disk_space"
@@ -38,6 +38,7 @@ block = "memory"
 display_type = "memory"
 format_mem = "{Mup}%"
 format_swap = "{SUp}%"
+
 
 [[block]]
 block = "cpu"
@@ -57,14 +58,8 @@ block = "battery"
 interval = 10
 format = "{percentage}% {time}"
 
-
 [[block]]
 block = "sound"
-
-#[[block]]
-#block = "bluetooth"
-#mac = "E8:07:BF:44:4B:32"
-
 
 [[block]]
 block = "time"

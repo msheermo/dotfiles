@@ -410,7 +410,8 @@ exec wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
 # pCloud drive
 exec /home/sheerio/bin/pcloud
 
-exec /usr/bin/ulauncher --hide-window 
+exec GDK_BACKEND=wayland ulauncher --hide-window
+for_window [app_id="ulauncher"] floating enable, border none
 
 
 # TODO
