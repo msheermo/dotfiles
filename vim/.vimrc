@@ -42,5 +42,8 @@ call plug#begin('~/.vim/plugged')
 " gruvbox colorscheme  
   Plug 'sainnhe/gruvbox-material'
 
+" nord colorscheme
+  Plug 'arcticicestudio/nord-vim'
+
 " Initialize plugin system
 call plug#end()
