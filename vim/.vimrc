@@ -8,6 +8,9 @@ set t_Co=256
 "set number
 "autocmd FileType yaml setlocal autoindent tabstop=2 shiftwidth=2 expandtab
 
+" CTRL P will open fzf
+nnoremap <C-p> :Files<Cr>
+
 " Install vim-plug if not found
 
 if empty(glob('~/.vim/autoload/plug.vim'))
