@@ -199,16 +199,16 @@ bindsym $mod+Shift+b move container to workspace back_and_forth
 
 
 # Launch apps in certain workspaces
-assign [class="^Spotify$"] → 8
+assign [class="^Spotify$"] workspace 12
 
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+c splith
+    bindsym $mod+f exec notify-send "Horizontal split", splith
     bindsym $mod+x exec notify-send "Changing split mode", split toggle
-    bindsym $mod+v splitv
+    bindsym $mod+v exec notify-send "Vertical split", splitv
 # split mode toggle between horizontal and vertical (status displayed in bar)
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
@@ -411,7 +411,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec /usr/bin/ckb-next
 
 # wlsunset replaces gammastep
-exec wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
+exec_always wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
 #exec gammastep-indicator
 
 # pCloud drive
@@ -419,6 +419,9 @@ exec /home/sheerio/bin/pcloud
 
 exec GDK_BACKEND=wayland ulauncher --hide-window
 for_window [app_id="ulauncher"] floating enable, border none
+
+# Autotiling see: https://github.com/nwg-piotr/autotiling
+exec_always autotiling
 
 
 # TODO
