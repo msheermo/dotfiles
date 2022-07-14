@@ -411,7 +411,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec /usr/bin/ckb-next
 
 # wlsunset replaces gammastep
-exec_always wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
+exec wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
 #exec gammastep-indicator
 
 # pCloud drive
@@ -421,7 +421,7 @@ exec GDK_BACKEND=wayland ulauncher --hide-window
 for_window [app_id="ulauncher"] floating enable, border none
 
 # Autotiling see: https://github.com/nwg-piotr/autotiling
-exec_always autotiling
+exec autotiling
 
 
 # TODO
