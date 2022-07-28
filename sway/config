@@ -1,8 +1,4 @@
-##############################
-# 			     #
 #    sheerio sway config     #
-# 			     #	
-############################## 
 ### Variables
 
 # Logo key. Mod4 for SUPER
@@ -19,13 +15,8 @@ xwayland enable
 # Font
 font pango: Liberation Mono 10
 
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-#set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 # TODO: waarom werkt dit niet?
-#
 # Floating dialogs and other stuff
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -38,14 +29,6 @@ for_window [class="Ulauncher"] floating enable border pixel 0
 for_window [class="keepassxc"] floating enable 
 for_window [class="rednotebook"] floating enable
 
-# # Set inner/outer gaps
-# gaps inner 0
-# gaps outer 0
-
-
-
-# Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps off
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/sheerio/Pictures/ghost_in_the_shell_wallpaper_BEST_ONE.png fit
 
@@ -55,7 +38,6 @@ exec swayidle -w \
         timeout 14400 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \
         before-sleep 'swaylock -f -c /home/sheerio/dotfiles/swaylock/config'
-
 
 ### Input configuration
 input type:touchpad {
@@ -68,16 +50,14 @@ input type:touchpad {
     click_method button_areas
     natural_scroll disabled
     scroll_method two_finger
-
 }
 
 input type:keyboard {
     xkb_numlock enabled
 }
 ### Monitor output configuration wit HDMI
-
-output DP-1 pos 3840 0
-output eDP-1 pos 0 0
+ output DP-1 pos 3840 0
+ output eDP-1 pos 0 0
 
 
 ### Key bindings
@@ -87,7 +67,6 @@ bindsym $mod+Return exec $term
 
 # Kill focused window
 bindsym $mod+q kill
-#bindsym $mod+Shift+q kill
 
 # Start your launcher
 bindsym $mod+d exec $menu
@@ -132,9 +111,6 @@ bindsym $mod+Shift+Right move right
 bindsym $meta+control+Left workspace prev 
 bindsym $meta+control+Right workspace next
 
-
-
-
 # wob config
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
@@ -142,12 +118,7 @@ exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2% > $SWAYSOCK.wob 
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2% > $SWAYSOCK.wob 
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle > $SWAYSOCK.wob 
-
-
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
 
 bindsym XF86MonBrightnessDown exec brightnessctl set 2%- && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )
 bindsym XF86MonBrightnessUp exec brightnessctl set +2% && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )
@@ -199,7 +170,7 @@ bindsym $mod+Shift+b move container to workspace back_and_forth
 
 
 # Launch apps in certain workspaces
-assign [class="^Spotify$"] workspace 12
+assign [class="^Spotify"] workspace 12
 
 # Layout stuff:
 #
