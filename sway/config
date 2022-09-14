@@ -30,14 +30,14 @@ for_window [class="keepassxc"] floating enable
 for_window [class="rednotebook"] floating enable
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/sheerio/Pictures/ghost_in_the_shell_wallpaper_BEST_ONE.png fit
+output * bg /home/sheerio/Pictures/ghost_in_the_shell_wallpaper_BEST_ONE.png fill
 
 ### Idle configuration
 exec swayidle -w \
         timeout 7200 'swaylock -f -c 000000' \
         timeout 14400 'swaymsg "output * dpms off"' \
+        before-sleep 'swaylock -f -c /home/sheerio/dotfiles/swaylock/config' \
         resume 'swaymsg "output * dpms on"' \
-        before-sleep 'swaylock -f -c /home/sheerio/dotfiles/swaylock/config'
 
 ### Input configuration
 input type:touchpad {
@@ -270,6 +270,8 @@ bindsym $mod+i exec swaymsg exec flatpak md.obsidian.Obsidian
 # Nautilus
 bindsym $mod+n exec /usr/bin/nautilus
 
+# Unread Gmail
+bindsym $mod+u exec xdg-open "https://mail.google.com/mail/u/0/?zx=fadtmohusi6u#search/in%3Ainbox+in%3Aunread"
 
 # Status Bar:
 #
