@@ -16,19 +16,6 @@ xwayland enable
 font pango: Liberation Mono 10
 
 
-# TODO: waarom werkt dit niet?
-# Floating dialogs and other stuff
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="bubble"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [window_role="Preferences"] floating enable
-for_window [window_role="About"] floating enable
-for_window [window_type="dialog"] floating enable
-for_window [window_type="menu"] floating enable
-for_window [class="Ulauncher"] floating enable border pixel 0
-for_window [class="keepassxc"] floating enable 
-for_window [class="rednotebook"] floating enable
-
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/sheerio/Pictures/ghost_in_the_shell_wallpaper_BEST_ONE.png fill
 
@@ -381,7 +368,7 @@ include /etc/sway/config.d/*
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # Mouse utility (why doesn't it hide...)
-exec /usr/bin/ckb-next
+exec swaymsg "workspace 12; exec /usr/bin/ckb-next"
 
 # wlsunset replaces gammastep
 exec wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
