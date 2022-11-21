@@ -1,4 +1,4 @@
-theme = "modern"
+theme = "gruvbox-dark"
 icons = "awesome"
 
 
@@ -14,14 +14,13 @@ block = "uptime"
 [[block]]
 block = "net"
 device = "wlp82s0"
-ip = true
-ssid = true
+format = "{ssid} {signal_strength} {ip}"
 interval = 5
-use_bits = false
-signal_strength = true
-speed_up = false
-speed_down = false
 on_click = "alacritty -e nmtui"
+
+#[[block]]
+#block = "external_ip"
+#format = "{ip} {city} {country_code}"
 
 [[block]]
 block = "disk_space"
@@ -36,8 +35,8 @@ alert = 10.0
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
+format_mem = "{mem_free;M}/{mem_total;M}({mem_total_used_percents})"
+format_swap = "{swap_free;M}/{swap_total;M}({swap_used_percents})"
 
 
 [[block]]
