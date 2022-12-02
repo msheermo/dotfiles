@@ -7,7 +7,8 @@ set $mod Mod4
 set $meta Mod1
 
 # Set Tilix as default terminator
-set $term tilix
+#set $term tilix
+set $term /usr/bin/kitty
 
 # run X11 apps
 xwayland enable
@@ -252,7 +253,7 @@ set $menu ulauncher-toggle
 ### Spotify Music
 bindsym $mod+m exec swaymsg exec flatpak run com.spotify.Client
 ### Obsidian
-bindsym $mod+i exec swaymsg exec flatpak md.obsidian.Obsidian
+bindsym $mod+i exec swaymsg exec flatpak run re.sonny.Tangram
 
 # Nautilus
 bindsym $mod+n exec /usr/bin/nautilus
