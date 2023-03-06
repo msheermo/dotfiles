@@ -7,9 +7,9 @@ icons = "awesome4"
 # not working with flatpak spotify at the moment
 [[block]]
 block = "music"
-player = "spotify"
-format = " $prev $play $next $combo"
+format = " $prev $play $next $combo.str(max_w:50,rot_interval:0.5 ) |"
 separator = " - "
+error_format = "$short_error_message|X"
 
 [[block]]
 block = "uptime"
