@@ -1,5 +1,7 @@
+[theme]
 theme = "gruvbox-dark"
-icons = "awesome"
+[icons]
+icons = "awesome4"
 
 
 # not working with flatpak spotify at the moment
@@ -10,59 +12,64 @@ icons = "awesome"
 
 [[block]]
 block = "uptime"
+interval = 3600 # update every hour
 
 [[block]]
 block = "net"
 device = "wlp82s0"
-format = "{ssid} {signal_strength} {ip}"
 interval = 5
-on_click = "alacritty -e nmtui"
+format = " $icon $signal_strength $ip "
+missing_format = " x "
+[[block.click]]
+button = "left"
+cmd = "alacritty -e nmtui"
 
 #[[block]]
 #block = "external_ip"
-#format = "{ip} {city} {country_code}"
+#format = "$ip $city $country_code"
 
 [[block]]
 block = "disk_space"
 path = "/home/"
-alias = "~"
 info_type = "available"
-unit = "GB"
 interval = 20
 warning = 20.0
 alert = 10.0
-
-[[block]]
-block = "memory"
-display_type = "memory"
-format_mem = "{mem_free;M}/{mem_total;M}({mem_total_used_percents})"
-format_swap = "{swap_free;M}/{swap_total;M}({swap_used_percents})"
-
+format = " $icon $available "
+format_alt = " $icon $percentage"
 
 [[block]]
 block = "cpu"
+format = "$icon $utilization"
 interval = 1
-
-
-[[block]]
-block = "load"
-interval = 1
-format = "{1m}"
+[[block.click]]                                                                                                    
+button = "left"
+cmd = "alacritty -e htop"
+    
+#[[block]]
+#block = "load"
+#interval = 1
+#format = "{1m}"
 
 [[block]]
 block = "backlight"
 
 [[block]]
 block = "battery"
-interval = 10
-format = "{percentage}% {time}"
+format = " $icon $percentage {$time |}"
+device = "DisplayDevice"
+driver = "upower"
 
 [[block]]
 block = "sound"
+max_vol	= 100
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
 
 [[block]]
 block = "time"
 interval = 1
-format = "%a %d-%m-%Y %H:%M:%S"
+format = "$timestamp.datetime(f:'%a %d-%m-%Y %H:%M:%S')"
 
 
