@@ -6,9 +6,9 @@ set $mod Mod4
 # Mod 1 = Alt key
 set $meta Mod1
 
-# Set Tilix as default terminator
+# Set foot as default terminator
 #set $term tilix
-set $term /usr/bin/kitty
+set $term /usr/bin/foot
 
 # run X11 apps
 xwayland enable
@@ -20,13 +20,6 @@ font pango: Liberation Mono 10
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/sheerio/Pictures/ghost_in_the_shell_wallpaper_BEST_ONE.png fill
 
-### Idle configuration
-#exec swayidle -w \
-#        timeout 7200 'swaylock -f -c 000000' \
-#        timeout 14400 'swaymsg "output * dpms off"' \
-#        before-sleep 'swaylock -f -c /home/sheerio/dotfiles/swaylock/config' \
-#        resume 'swaymsg "output * dpms on"' \
-
 ### Input configuration
 input type:touchpad {
     accel_profile adaptive
@@ -34,7 +27,6 @@ input type:touchpad {
     pointer_accel 0.85
     tap disabled
     scroll_factor 2
-# deze zijn nieuw
     click_method button_areas
     natural_scroll disabled
     scroll_method two_finger
@@ -331,37 +323,6 @@ client.urgent           $red $red $white $red $red
 
 
 #end of window title bars & borders section
-
-
-### START dracula Theme
-# class                 border  bground text    indicator child_border
-
-# uncomment from here:
-# client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-# client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-# client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-# client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-# client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-
-# client.background       #F8F8F2
-
-# bar {
-#   colors {
-#     background #282A36
-#     statusline #F8F8F2
-#     separator  #44475A
-
-#     focused_workspace  #44475A #44475A #F8F8F2
-#     active_workspace   #282A36 #44475A #F8F8F2
-#     inactive_workspace #282A36 #282A36 #BFBFBF
-#     urgent_workspace   #FF5555 #FF5555 #F8F8F2
-#     binding_mode       #FF5555 #FF5555 #F8F8F2
-#   }
-# }
-
-### END dracula theme
-
-
 
 include /etc/sway/config.d/*
 
