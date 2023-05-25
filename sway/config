@@ -32,9 +32,9 @@ input type:touchpad {
     scroll_method two_finger
 }
 
-input type:keyboard {
-    xkb_numlock enabled
-}
+#input type:keyboard {
+#    xkb_numlock enabled
+#}
 ### Monitor output configuration wit HDMI
  output DP-1 pos 3840 0
  output eDP-1 pos 0 0
@@ -102,6 +102,20 @@ bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 bindsym XF86MonBrightnessDown exec brightnessctl set 2%- && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )
 bindsym XF86MonBrightnessUp exec brightnessctl set +2% && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )
+
+# Allow Play and Stop bindings even if the screen is locked
+bindsym --locked {
+    XF86AudioPlay       exec playerctl play-pause
+    XF86AudioStop       exec playerctl stop
+}
+
+bindsym {
+    XF86AudioForward    exec playerctl position +10
+    XF86AudioNext       exec playerctl next
+    XF86AudioPause      exec playerctl pause
+    XF86AudioPrev       exec playerctl previous
+    XF86AudioRewind     exec playerctl position -10
+}
 
 
 # Manual Lock
@@ -171,6 +185,25 @@ bindsym $meta+shift+f floating toggle
 
 # fullscreen
 bindsym $meta+f fullscreen toggle global
+
+# firefox wayland screensharing indicator
+for_window [app_id="firefox" title="Firefox — Sharing Indicator"] {
+    floating enable
+}
+
+# Display PulseAudio volume control application (both GTK and Qt varieties)
+# as a floating window.
+
+for_window [app_id="pavucontrol"] {
+    floating enable
+    move position center
+}
+
+for_window [app_id="pavucontrol-qt"] {
+    floating enable
+    move position center
+}
+
 
 
     # Toggle the current focus between tiling and floating mode
