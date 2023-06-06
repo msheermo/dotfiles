@@ -267,7 +267,7 @@ bindsym $meta+l resize set width 40 ppt
 for_window [class=".*"] resize set width 33 ppt
 
 # Screenshots
-bindsym Mod4+Ctrl+p  exec ~/bin/grimshot --notify save window clipboard
+bindsym Mod4+Ctrl+p  exec ~/bin/grimshot --notify copy area clipboard
 bindsym Mod4+Mod1+p  exec ~/bin/grimshot --notify save output
 bindsym Mod4+Shift+p exec ~/bin/grimshot --notify save area 
 bindsym Mod4+p       exec ~/bin/grimshot --notify save active  
