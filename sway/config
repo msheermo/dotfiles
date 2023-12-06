@@ -281,7 +281,8 @@ bindsym $mod+m exec swaymsg exec flatpak run com.spotify.Client
 bindsym $mod+i exec swaymsg exec flatpak run re.sonny.Tangram
 
 # Nautilus
-bindsym $mod+n exec /usr/bin/nautilus
+#bindsym $mod+n exec /usr/bin/nautilus
+bindsym $mod+n exec /usr/bin/thunar
 
 # Unread Gmail
 bindsym $mod+u exec xdg-open "https://mail.google.com/mail/u/0/?zx=fadtmohusi6u#search/in%3Ainbox+in%3Aunread"
@@ -378,7 +379,11 @@ for_window [app_id="ulauncher"] floating enable, border none
 # Autotiling see: https://github.com/nwg-piotr/autotiling
 exec_always autotiling
 
+# nm applet
+exec_always  nm-applet --indicator 
 
 # TODO
 # waybar to replace i3-status
+# Kanshi display manager
+
 
