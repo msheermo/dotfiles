@@ -7,7 +7,6 @@ set $mod Mod4
 set $meta Mod1
 
 # Set foot as default terminator
-#set $term tilix
 set $term /usr/bin/foot
 
 # run X11 apps
@@ -18,7 +17,8 @@ font pango: Liberation Mono 10
 
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/sheerio/Pictures/ghost_in_the_shell_wallpaper_BEST_ONE.png fill
+#output * bg /home/sheerio/Pictures/ghost_in_the_shell_wallpaper_BEST_ONE.png fill
+output * bg /home/sheerio/Pictures/nw-the/gist-neo-city-914670.jpg fill
 
 ### Input configuration
 input type:touchpad {
@@ -119,11 +119,11 @@ bindsym {
 
 
 # Manual Lock
-bindsym --release $mod+g exec swaylock -f -i /home/sheerio/Pictures/skyrim.jpg
+bindsym --release $mod+g exec swaylock -f -i /home/sheerio/Pictures/nord-wp/alien-bar-11.png
 
 # Auto lock and screen off
 #set $locker 'swaylock -f -i /home/sheerio/Pictures/ghost_in_the_shell_3faces.jpeg'
-set $locker 'swaylock -f -i /home/sheerio/Pictures/skyrim.jpg'
+set $locker 'swaylock -f -i /home/sheerio/Pictures/nord-wp/alien-bar-11.png'
 exec swayidle -w \
     timeout 300 $locker \
     timeout 900 'swaymsg "output * dpms off"' \
@@ -165,6 +165,7 @@ bindsym $mod+Shift+b move container to workspace back_and_forth
 
 # Launch apps in certain workspaces
 assign [class="^Spotify"] workspace 12
+assign [class="^Thunderbird"] workspace 11
 
 # Layout stuff:
 #
@@ -280,8 +281,7 @@ bindsym $mod+m exec swaymsg exec flatpak run com.spotify.Client
 ### Obsidian
 bindsym $mod+i exec swaymsg exec flatpak run re.sonny.Tangram
 
-# Nautilus
-#bindsym $mod+n exec /usr/bin/nautilus
+# file manager
 bindsym $mod+n exec /usr/bin/thunar
 
 # Unread Gmail
@@ -314,15 +314,27 @@ bindsym $mod+u exec xdg-open "https://mail.google.com/mail/u/0/?zx=fadtmohusi6u#
 #######
 
 # set primary gruvbox colorscheme colors
-set $bg #282828
-set $red #cc241d
-set $green #98971a
-set $yellow #d79921
-set $blue #458588
+# set $bg #282828
+# set $red #cc241d
+# set $green #98971a
+# set $yellow #d79921
+# set $blue #458588
+# set $purple #b16286
+# set $aqua #689d68
+# set $gray #a89984
+# set $darkgray #1d2021
+# set $white #ffffff
+#     font pango: Liberation Mono 10     
+
+set $bg #4c566a 
+set $red #bf616a
+set $green #4c566a
+set $yellow #d8dee9
+set $blue #81a1c1
 set $purple #b16286
-set $aqua #689d68
-set $gray #a89984
-set $darkgray #1d2021
+set $aqua #93a1a1
+set $gray #2E3440
+set $darkgray #4c566a
 set $white #ffffff
     font pango: Liberation Mono 10     
 
@@ -350,11 +362,11 @@ bar {
 
 # green gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $blue $darkgray $yellow $yellow $blue
+client.focused          $white $darkgray $yellow $yellow $blue
 client.focused_inactive $darkgray $darkgray $aqua $gray $darkgray
 client.unfocused        $darkgray $darkgray $aqua $green $darkgray
 client.urgent           $red $red $white $red $red
-
+client.background       $white
 
 #end of window title bars & borders section
 

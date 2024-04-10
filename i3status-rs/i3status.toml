@@ -1,5 +1,5 @@
 [theme]
-theme = "gruvbox-dark"
+theme = "nord-dark"
 [icons]
 icons = "awesome4"
 
@@ -24,7 +24,7 @@ format = " $icon $signal_strength $ip "
 missing_format = " x "
 [[block.click]]
 button = "left"
-cmd = "alacritty -e nmtui"
+cmd = "tilix -e nmtui"
 
 #[[block]]
 #block = "external_ip"
