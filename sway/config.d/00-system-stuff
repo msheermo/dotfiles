@@ -1,0 +1,12 @@
+# include both the default and my own config dirs
+
+include /etc/sway/config.d/* 
+include /home/sheerio/dotfiles/sway/config.d 
+
+# environment variable to sway
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+# run X11 apps in xwayland
+xwayland enable
+
+

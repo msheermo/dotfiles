@@ -1,0 +1,9 @@
+### Keyboard shortcuts ###
+
+# Windows / superkey called Mod4
+set $mod Mod4
+
+# Alt key called Mod1
+set $meta Mod1
+
+

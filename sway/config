@@ -2,15 +2,15 @@
 ### Variables
 
 # Logo key. Mod4 for SUPER
-set $mod Mod4
+#set $mod Mod4
 # Mod 1 = Alt key
-set $meta Mod1
+#set $meta Mod1
 
 # Set foot as default terminator
 set $term /usr/bin/foot
 
 # run X11 apps
-xwayland enable
+#xwayland enable
 
 # Font
 font pango: Liberation Mono 10
@@ -18,7 +18,8 @@ font pango: Liberation Mono 10
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /home/sheerio/Pictures/ghost_in_the_shell_wallpaper_BEST_ONE.png fill
-output * bg /home/sheerio/Pictures/nw-the/gist-neo-city-914670.jpg fill
+#output * bg  /home/sheerio/Pictures/nord-wp/alien-bar-11.png fill
+#output * bg /home/sheerio/Pictures/nw-the/gist-neo-city-914670.jpg fill
 
 ### Input configuration
 input type:touchpad {
@@ -123,7 +124,7 @@ bindsym --release $mod+g exec swaylock -f -i /home/sheerio/Pictures/nord-wp/alie
 
 # Auto lock and screen off
 #set $locker 'swaylock -f -i /home/sheerio/Pictures/ghost_in_the_shell_3faces.jpeg'
-set $locker 'swaylock -f -i /home/sheerio/Pictures/nord-wp/alien-bar-11.png'
+set $locker 'swaylock -f -i /home/sheerio/Pictures/nw-the/gist-neo-city-914670.jpg'
 exec swayidle -w \
     timeout 300 $locker \
     timeout 900 'swaymsg "output * dpms off"' \
@@ -370,10 +371,13 @@ client.background       $white
 
 #end of window title bars & borders section
 
-include /etc/sway/config.d/*
+
+# include /etc/sway/config.d/*
+# include /home/sheerio/dotfiles/sway/config.d
+
 
 ### STARTUP APPLICATIONS
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+#exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # Mouse utility (why doesn't it hide...)
 exec swaymsg "workspace 12; exec /usr/bin/ckb-next"

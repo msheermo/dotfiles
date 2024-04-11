@@ -1,12 +1,40 @@
 max-visible=3
 anchor=top-right
-font=Liberation Mono 9
-default-timeout=5000
+#font=Liberation Mono 9
+sort=-time
+layer=top
 width=400
 
+
+
+
 # Matrix colors
-background-color=#020203
-text-color=#ffffff
-border-color=#020203
+#background-color=#020203
+#text-color=#ffffff
+#border-color=#020203
+#icons=1
+#max-icon-size=32
+
+background-color=#2e3440
+height=110
+border-size=3
+border-color=#5e81ac
+border-radius=0
 icons=1
 max-icon-size=32
+default-timeout=50000
+ignore-timeout=1
+font=Noto Sans Mono 9
+margin=20
+
+[urgency=low]
+border-color=#4c566a
+default-timeout=50000
+
+[urgency=normal]
+border-color=#4c566a
+default-timeout=50000
+
+[urgency=high]
+border-color=#8fbcbb
+default-timeout=50000

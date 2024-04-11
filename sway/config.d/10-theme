@@ -1,0 +1,6 @@
+# wallpaper utility azote (standard fedora repo)
+# dnf install azote
+# autostart 
+exec ~/.azotebg
+
+
