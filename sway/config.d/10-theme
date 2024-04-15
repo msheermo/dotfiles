@@ -1,6 +1,64 @@
+### Wallpaper ###
 # wallpaper utility azote (standard fedora repo)
 # dnf install azote
 # autostart 
 exec ~/.azotebg
 
 
+### Colorscheme ###
+
+# set nord colors according to https://www.nordtheme.com/docs/colors-and-palettes
+
+set $nord0 #2E3440
+set $nord1 #3B4252
+set $nord2 #434C5E
+set $nord3 #4C566A
+
+set $snowstorm4 #D8DEE9
+set $snowstorm5 #E5E9F0
+set $snowstorm6 #ECEFF4
+
+set $frost7 #8FBCBB
+set $frost8 #88C0D0
+set $frost9 #81A1C1
+set $frost10 #5E81AC
+
+set $aurora11 #BF616A
+set $aurora12 #D08770
+set $aurora13 #EBCB8B
+set $aurora14 #A3BE8C
+set $aurora15 #B48EAD
+
+
+
+#start of window title bars & borders section
+
+#start of bar section
+bar {
+    position top
+    status_command /usr/bin/i3status-rs /home/sheerio/.config/i3status/i3status.toml
+    colors {
+        # bar background color
+        background $nord0
+        # text color used for blocks that do not have a color specified.
+        statusline $frost7
+        # workspaces section            
+        #                    border  backgr. text
+        focused_workspace    $nord1 $frost9 $nord1
+        inactive_workspace   $nord1 $nord0 $frost9
+        active_workspace     $nord2 $nord0 $aurora13
+        urgent_workspace     $aurora11 $aurora11 $nord1
+    }
+}
+#end of bar section
+
+
+# green gruvbox
+# class                 border|backgr|text|indicator|child_border
+
+ client.focused          $nord0 $nord3 $snowstorm6 $aurora13 $nord3
+ client.focused_inactive $nord0 $nord1 $nord3 $nord0 $nord1
+ client.unfocused        $nord0 $nord1 $nord3 $nord0 $nord1
+ client.urgent           $aurora11 $aurora11 $snowstorm6 $aurora11 $aurora11
+ client.background       $snowstorm11
+#end of window title bars & borders section

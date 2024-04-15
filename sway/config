@@ -2,9 +2,9 @@
 ### Variables
 
 # Logo key. Mod4 for SUPER
-#set $mod Mod4
+set $mod Mod4
 # Mod 1 = Alt key
-#set $meta Mod1
+set $meta Mod1
 
 # Set foot as default terminator
 set $term /usr/bin/foot
@@ -327,53 +327,53 @@ bindsym $mod+u exec xdg-open "https://mail.google.com/mail/u/0/?zx=fadtmohusi6u#
 # set $white #ffffff
 #     font pango: Liberation Mono 10     
 
-set $bg #4c566a 
-set $red #bf616a
-set $green #4c566a
-set $yellow #d8dee9
-set $blue #81a1c1
-set $purple #b16286
-set $aqua #93a1a1
-set $gray #2E3440
-set $darkgray #4c566a
-set $white #ffffff
-    font pango: Liberation Mono 10     
+# set $bg #4c566a 
+# set $red #bf616a
+# set $green #4c566a
+# set $yellow #d8dee9
+# set $blue #81a1c1
+# set $purple #b16286
+# set $aqua #93a1a1
+# set $gray #2E3440
+# set $darkgray #4c566a
+# set $white #ffffff
+#     font pango: Liberation Mono 10     
 
 #start of window title bars & borders section
 
 #start of bar section
-bar {
-    position top
-    status_command /usr/bin/i3status-rs /home/sheerio/.config/i3status/i3status.toml
-    colors {
-        # bar background color
-        background $bg
-        # text color used for blocks that do not have a color specified.
-        statusline $yellow
-        # workspaces section            
-        #                    border  backgr. text
-        focused_workspace    $aqua $aqua $darkgray
-        inactive_workspace   $darkgray $darkgray $yellow
-        active_workspace     $darkgray $darkgray $yellow
-        urgent_workspace     $red $red $bg
-    }
-}
+# bar {
+#     position top
+#     status_command /usr/bin/i3status-rs /home/sheerio/.config/i3status/i3status.toml
+#     colors {
+#         # bar background color
+#         background $bg
+#         # text color used for blocks that do not have a color specified.
+#         statusline $yellow
+#         # workspaces section            
+#         #                    border  backgr. text
+#         focused_workspace    $aqua $aqua $darkgray
+#         inactive_workspace   $darkgray $darkgray $yellow
+#         active_workspace     $darkgray $darkgray $yellow
+#         urgent_workspace     $red $red $bg
+#     }
+# }
 #end of bar section
 
 
 # green gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $white $darkgray $yellow $yellow $blue
-client.focused_inactive $darkgray $darkgray $aqua $gray $darkgray
-client.unfocused        $darkgray $darkgray $aqua $green $darkgray
-client.urgent           $red $red $white $red $red
-client.background       $white
+# client.focused          $white $darkgray $yellow $yellow $blue
+# client.focused_inactive $darkgray $darkgray $aqua $gray $darkgray
+# client.unfocused        $darkgray $darkgray $aqua $green $darkgray
+# client.urgent           $red $red $white $red $red
+# client.background       $white
 
 #end of window title bars & borders section
 
 
-# include /etc/sway/config.d/*
-# include /home/sheerio/dotfiles/sway/config.d
+include /etc/sway/config.d/*
+include /home/sheerio/dotfiles/sway/config.d/*
 
 
 ### STARTUP APPLICATIONS
