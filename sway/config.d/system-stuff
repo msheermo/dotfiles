@@ -9,4 +9,5 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 # run X11 apps in xwayland
 xwayland enable
 
-
+# Set foot as default terminator
+set $term /usr/bin/foot

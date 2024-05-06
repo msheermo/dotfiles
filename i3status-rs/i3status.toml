@@ -24,7 +24,7 @@ format = " $icon $signal_strength $ip "
 missing_format = " x "
 [[block.click]]
 button = "left"
-cmd = "tilix -e nmtui"
+cmd = "foot -e nmtui"
 
 #[[block]]
 #block = "external_ip"

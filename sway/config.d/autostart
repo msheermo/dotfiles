@@ -1,0 +1,18 @@
+# Mouse utility (why doesn't it hide...)
+exec swaymsg "workspace 12; exec /usr/bin/ckb-next"
+
+# wlsunset replaces gammastep
+exec wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
+#exec gammastep-indicator
+
+# pCloud drive
+exec /home/sheerio/bin/pcloud
+
+exec GDK_BACKEND=wayland ulauncher --hide-window
+for_window [app_id="ulauncher"] floating enable, border none
+
+# Autotiling see: https://github.com/nwg-piotr/autotiling
+exec_always ~/bin/autotiling
+
+# nm applet
+exec_always  nm-applet --indicator

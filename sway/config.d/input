@@ -1,0 +1,12 @@
+### Input configuration
+
+input type:touchpad {
+    accel_profile adaptive
+    dwt enabled
+    pointer_accel 0.85
+    tap disabled
+    scroll_factor 2
+    click_method button_areas
+    natural_scroll disabled
+    scroll_method two_finger
+}

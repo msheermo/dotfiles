@@ -5,15 +5,14 @@
 set $mod Mod4
 # Mod 1 = Alt key
 set $meta Mod1
-
 # Set foot as default terminator
-set $term /usr/bin/foot
+#set $term /usr/bin/foot
 
 # run X11 apps
 #xwayland enable
 
 # Font
-font pango: Liberation Mono 10
+#font pango: Liberation Mono 10
 
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -22,23 +21,23 @@ font pango: Liberation Mono 10
 #output * bg /home/sheerio/Pictures/nw-the/gist-neo-city-914670.jpg fill
 
 ### Input configuration
-input type:touchpad {
-    accel_profile adaptive
-    dwt enabled
-    pointer_accel 0.85
-    tap disabled
-    scroll_factor 2
-    click_method button_areas
-    natural_scroll disabled
-    scroll_method two_finger
-}
-
+#input type:touchpad {
+#    accel_profile adaptive
+#    dwt enabled
+#    pointer_accel 0.85
+#    tap disabled
+#    scroll_factor 2
+#    click_method button_areas
+#    natural_scroll disabled
+#    scroll_method two_finger
+#}
+#
 #input type:keyboard {
 #    xkb_numlock enabled
 #}
 ### Monitor output configuration wit HDMI
- output DP-1 pos 3840 0
- output eDP-1 pos 0 0
+# output DP-1 pos 3840 0
+# output eDP-1 pos 0 0
 
 
 ### Key bindings
@@ -380,23 +379,23 @@ include /home/sheerio/dotfiles/sway/config.d/*
 #exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # Mouse utility (why doesn't it hide...)
-exec swaymsg "workspace 12; exec /usr/bin/ckb-next"
+# exec swaymsg "workspace 12; exec /usr/bin/ckb-next"
 
 # wlsunset replaces gammastep
-exec wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
+# exec wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
 #exec gammastep-indicator
 
 # pCloud drive
-exec /home/sheerio/bin/pcloud
+# exec /home/sheerio/bin/pcloud
 
-exec GDK_BACKEND=wayland ulauncher --hide-window
-for_window [app_id="ulauncher"] floating enable, border none
+# exec GDK_BACKEND=wayland ulauncher --hide-window
+# for_window [app_id="ulauncher"] floating enable, border none
 
 # Autotiling see: https://github.com/nwg-piotr/autotiling
-exec_always autotiling
+# exec_always autotiling
 
 # nm applet
-exec_always  nm-applet --indicator 
+# exec_always  nm-applet --indicator 
 
 # TODO
 # waybar to replace i3-status

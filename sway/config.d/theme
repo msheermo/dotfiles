@@ -1,4 +1,9 @@
+# Font
+font pango: Liberation Mono 10
+
+
 ### Wallpaper ###
+
 # wallpaper utility azote (standard fedora repo)
 # dnf install azote
 # autostart 
