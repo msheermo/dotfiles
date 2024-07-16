@@ -3,10 +3,21 @@
 input type:touchpad {
     accel_profile adaptive
     dwt enabled
-    pointer_accel 0.85
+    pointer_accel 0.6
     tap disabled
     scroll_factor 2
     click_method button_areas
     natural_scroll disabled
     scroll_method two_finger
 }
+
+
+#input type:touchpad {
+#	accel_profile flat
+#	dwt enabled
+#	tap disabled
+#	scroll_factor 1.5
+#	click_method button_areas
+#	natural_scroll disabled
+#	pointer_accel 1
+#}
