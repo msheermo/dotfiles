@@ -11,3 +11,5 @@ xwayland enable
 
 # Set foot as default terminator
 set $term /usr/bin/foot
+
+

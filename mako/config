@@ -1,22 +1,13 @@
 max-visible=3
 anchor=top-right
-#font=Liberation Mono 9
 sort=-time
 layer=top
-width=400
+width=500
 
 
-
-
-# Matrix colors
-#background-color=#020203
-#text-color=#ffffff
-#border-color=#020203
-#icons=1
-#max-icon-size=32
 
 background-color=#2e3440
-height=110
+height=200
 border-size=2
 border-color=#5e81ac
 border-radius=0
@@ -24,7 +15,7 @@ icons=1
 max-icon-size=32
 default-timeout=10000
 ignore-timeout=1
-font=Noto Sans Mono 9
+font=Noto Sans Mono 11
 margin=20
 
 [urgency=low]

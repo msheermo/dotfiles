@@ -1,0 +1,1 @@
+oathtool --time-step=30s --totp bf51d8dff550f350c3070be593e8e96844e321e4 | wl-copy -n

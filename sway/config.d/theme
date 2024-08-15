@@ -1,5 +1,5 @@
 # Font
-font pango: Liberation Mono 10
+font pango: Liberation Mono 11
 
 
 ### Wallpaper ###
@@ -38,25 +38,31 @@ set $aurora15 #B48EAD
 
 #start of window title bars & borders section
 
-#start of bar section
+# Handle waybar
 bar {
-    position top
-    status_command /usr/bin/i3status-rs /home/sheerio/.config/i3status/i3status.toml
-    colors {
-        # bar background color
-        background $nord0
-        # text color used for blocks that do not have a color specified.
-        statusline $frost7
-        # workspaces section            
-        #                    border  backgr. text
-        focused_workspace    $nord1 $frost9 $nord1
-        inactive_workspace   $nord1 $nord0 $frost9
-        active_workspace     $nord2 $nord3 $aurora13
-        urgent_workspace     $aurora11 $aurora11 $nord1
-    }
+     swaybar_command waybar
 }
-#end of bar section
 
+
+##start of bar section
+#bar {
+#    position top
+#    status_command /usr/bin/i3status-rs /home/sheerio/.config/i3status/i3status.toml
+#    colors {
+#        # bar background color
+#        background $nord0
+#        # text color used for blocks that do not have a color specified.
+#        statusline $frost7
+#        # workspaces section            
+#        #                    border  backgr. text
+#        focused_workspace    $nord1 $frost9 $nord1
+#        inactive_workspace   $nord1 $nord0 $frost9
+#        active_workspace     $nord2 $nord3 $aurora13
+#        urgent_workspace     $aurora11 $aurora11 $nord1
+#    }
+#}
+##end of bar section
+#
 
 # green gruvbox
 # class                 border|backgr|text|indicator|child_border
