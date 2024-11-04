@@ -12,20 +12,19 @@
         "sway/mode"
     ],
     "modules-center": [
-        "sway/window"
+        "custom/spotify"
     ],
     "modules-right": [
-        "custom/spotify",
         "idle_inhibitor",
         "pulseaudio",
         "network",
         "cpu",
         "memory",
-        "temperature",
         "backlight",
         "battery",
         "battery#bat2",
         "tray",
+	"power-profiles-daemon",
         "clock"
     ],
     // Modules configuration
@@ -56,15 +55,43 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%H:%M}",
-        "interval": 10,
+        "format": "{:%a - %H:%M}  ",
+        "format-alt": "{:%A, %d %B %Y (%R)}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "today-format": "<span color='#ff6699'><b><u>{}</u></b></span>",
-        "format-alt": "{:%Y-%m-%d}"
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
     },
     "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+         "interval": 1,
+         "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7} ",
+         "format-icons": [
+              "<span color='#69ff94'>▁</span>", // green
+              "<span color='#2aa9ff'>▂</span>", // blue
+              "<span color='#f8f8f2'>▃</span>", // white
+              "<span color='#f8f8f2'>▄</span>", // white
+              "<span color='#ffffa5'>▅</span>", // yellow
+              "<span color='#ffffa5'>▆</span>", // yellow
+              "<span color='#ff9977'>▇</span>", // orange
+              "<span color='#dd532e'>█</span>"  // red
+         ]
     },
     "memory": {
         "format": "{}% "
@@ -72,7 +99,7 @@
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
+        "critical-threshold": 90,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
@@ -156,8 +183,11 @@
         "return-type": "json",
         "exec": "/home/sheerio/dotfiles/waybar/modules/spotify.sh",
         "exec-if": "pgrep spotify",
-        "escape": true
-    },
+        "escape": true,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous"
+        },
     "custom/power": {
         "format" : "⏻ ",
 		"tooltip": false,
