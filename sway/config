@@ -118,14 +118,14 @@ assign [class="^Spotify"] workspace 12
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+f exec notify-send "Horizontal split", splith
-    bindsym $mod+x exec notify-send "Changing split mode", split toggle
-    bindsym $mod+v exec notify-send "Vertical split", splitv
+    # bindsym $mod+f exec notify-send "Horizontal split", splith
+
+    # bindsym $mod+v exec notify-send "Vertical split", splitv
 # split mode toggle between horizontal and vertical (status displayed in bar)
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    # bindsym $mod+s layout stacking
+    # bindsym $mod+w layout tabbed
+    # bindsym $mod+e layout toggle split
 
 # toggle between tiling and floating
 bindsym $meta+shift+f floating toggle
