@@ -41,7 +41,7 @@ alias df='df -H'
 alias du='du -ch'
 alias docker=podman
 # cowsay en fortune
-fortune | cowsay -s
+fortune -a| cowsay -s
 # kcli autocomplete
 eval "$(register-python-argcomplete kcli)"
 
@@ -59,3 +59,5 @@ if type rg &> /dev/null; then
 fi
 
 complete -C /usr/bin/terraform terraform
+export TUTORIAL_HOME=/home/sheerio/demo-apps
+export TUTORIAL_HOME=/home/sheerio/demo-apps/demo-apps

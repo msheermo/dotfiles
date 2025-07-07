@@ -16,3 +16,7 @@ exec_always ~/bin/autotiling
 
 # nm applet
 exec_always  nm-applet --indicator
+
+# start pomobar server
+exec ~/bin/pomobar
+

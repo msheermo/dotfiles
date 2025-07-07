@@ -1,8 +1,8 @@
-max-visible=3
+max-visible=5
 anchor=top-right
 sort=-time
 layer=top
-width=500
+width=600
 
 
 
@@ -13,9 +13,9 @@ border-color=#5e81ac
 border-radius=0
 icons=1
 max-icon-size=32
-default-timeout=10000
+default-timeout=15000
 ignore-timeout=1
-font=Noto Sans Mono 11
+font=Noto Sans Mono 10
 margin=20
 
 [urgency=low]

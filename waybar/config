@@ -13,8 +13,10 @@
     ],
     "modules-center": [
         "custom/spotify"
+
     ],
     "modules-right": [
+        "custom/pomobar",
         "idle_inhibitor",
         "pulseaudio",
         "network",
@@ -24,7 +26,7 @@
         "battery",
         "battery#bat2",
         "tray",
-	"power-profiles-daemon",
+        "power-profiles-daemon",
         "clock"
     ],
     // Modules configuration
@@ -198,6 +200,21 @@
 			"reboot": "reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
-		}
-    }
+		  }
+    },
+    "custom/pomobar": {
+        "format": "{} {icon}",
+        "format-icons": {
+          "idle": "",
+          "paused": "",
+          "work": "",
+          "short_break": "",
+          "long_break": ""
+        },
+        "interval": 1,
+        "exec": "~/dotfiles/waybar/modules/pomobar-cli status",
+        "on-click": "~/dotfiles/waybar/modules/pomobar-cli toggle",
+        "on-click-right": "~/dotfiles/waybar/modules/pomobar-cli reset",
+        "return-type": "json"
+      }
 }
