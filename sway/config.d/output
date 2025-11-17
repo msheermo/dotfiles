@@ -1,3 +1,10 @@
 ### Monitor output configuration wit HDMI
- output DP-1 pos 3840 0
- output eDP-1 pos 0 0
+output 'BOE 0x09BA Unknown' resolution 2560x1600 position 0 0
+output 'Invalid Vendor Codename - RTK USB C2 0x01010101' resolution 3840x2400 position 2560 0 scale 1.5
+
+### bind 1-2 to laptop
+workspace 1 output 'BOE 0x09BA Unknown'
+workspace 2 output 'BOE 0x09BA Unknown'
+workspace 11 output 'Invalid Vendor Codename - RTK USB C2 0x01010101'
+workspace 12 output 'Invalid Vendor Codename - RTK USB C2 0x01010101'
+
