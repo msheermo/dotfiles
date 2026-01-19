@@ -42,7 +42,7 @@ bindsym $mod+Shift+Right move right
 
 ## Workspaces ##
 # next or previous workspace with arrow keys CTRL + ALT like gnome
-bindsym $meta+control+Left workspace prev 
+bindsym $meta+control+Left workspace prev
 bindsym $meta+control+Right workspace next
 
 # Switch to workspace
@@ -76,7 +76,7 @@ bindsym $mod+Shift+equal move container to workspace 12
 
 
 bindsym $mod+b workspace back_and_forth
-bindsym $mod+Shift+b move container to workspace back_and_forth       
+bindsym $mod+Shift+b move container to workspace back_and_forth
 
 #Layout
 # Switch the current container between different layout styles

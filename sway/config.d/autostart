@@ -15,8 +15,7 @@ for_window [app_id="ulauncher"] floating enable, border none
 exec_always ~/bin/autotiling
 
 # nm applet
-exec_always  nm-applet --indicator
+exec nm-applet --indicator
 
 # start pomobar server
 exec ~/bin/pomobar
-

@@ -10,14 +10,3 @@ input type:touchpad {
     natural_scroll disabled
     scroll_method two_finger
 }
-
-
-#input type:touchpad {
-#	accel_profile flat
-#	dwt enabled
-#	tap disabled
-#	scroll_factor 1.5
-#	click_method button_areas
-#	natural_scroll disabled
-#	pointer_accel 1
-#}
