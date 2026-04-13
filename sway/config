@@ -158,9 +158,6 @@ bindsym $mod+n exec /usr/bin/nautilus
 # Unread Gmail
 bindsym $mod+u exec xdg-open "https://mail.google.com/mail/u/0/?zx=fadtmohusi6u#search/in%3Ainbox+in%3Aunread"
 
-# browsers
-bindsym $mod+/ exec /usr/bin/firefox
-bindsym $mod+| exec app.zen_browser.zen
 
 
 
