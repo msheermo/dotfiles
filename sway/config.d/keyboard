@@ -80,8 +80,8 @@ bindsym $mod+Shift+b move container to workspace back_and_forth
 
 #Layout
 # Switch the current container between different layout styles
-bindsym $mod+s layout split
+bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle [tabbed|split]
+bindsym $mod+e layout toggle split
 
 bindsym $mod+x exec notify-send "Changing split mode", split toggle

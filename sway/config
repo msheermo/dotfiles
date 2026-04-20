@@ -6,17 +6,30 @@ set $mod Mod4
 # Mod 1 = Alt key
 set $meta Mod1
 
+# Set a custom save location for grimshot
+set $screenshot_dir /home/msheermo/Pictures/grim2/
+exec mkdir -p $screenshot_dir
+
 
 ### Key bindings
 
 # wob config
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+#exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+exec sh -c "[ -p $SWAYSOCK.wob ] || mkfifo $SWAYSOCK.wob; tail -f $SWAYSOCK.wob | wob"
 
 # Media keys
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2% > $SWAYSOCK.wob
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2% > $SWAYSOCK.wob
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle > $SWAYSOCK.wob
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2% > $SWAYSOCK.wob
+#bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2% > $SWAYSOCK.wob
+#bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle > $SWAYSOCK.wob
+#bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Raise Volume
+bindsym XF86AudioRaiseVolume exec sh -c "pactl set-sink-volume @DEFAULT_SINK@ +2%; pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '[0-9]+(?=%)' | head -1 > $SWAYSOCK.wob"
+# Lower Volume
+bindsym XF86AudioLowerVolume exec sh -c "pactl set-sink-volume @DEFAULT_SINK@ -2%; pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '[0-9]+(?=%)' | head -1 > $SWAYSOCK.wob"
+# Mute (Sends 0 to wob if muted, or the volume if unmuted)
+bindsym XF86AudioMute exec sh -c "pactl set-sink-mute @DEFAULT_SINK@ toggle; pactl get-sink-mute @DEFAULT_SINK@ | grep -q 'yes' && echo 0 > $SWAYSOCK.wob || pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '[0-9]+(?=%)' | head -1 > $SWAYSOCK.wob"
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && ( pactl get-source-mute @DEFAULT_SOURCE@ | grep -q 'yes' && echo 0 > $SWAYSOCK.wob || echo 100 > $SWAYSOCK.wob )
 
 bindsym XF86MonBrightnessDown exec brightnessctl set 2%- && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )
 bindsym XF86MonBrightnessUp exec brightnessctl set +2% && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )
@@ -37,19 +50,19 @@ bindsym {
 
 
 # Manual Lock
-bindsym --release $mod+g exec swaylock -f -i /home/sheerio/Pictures/nord-wp/alien-bar-11.png
+bindsym --release $mod+g exec swaylock -f -i /home/msheermo/Pictures/nord-wp/alien-bar-11.png
 
 # Auto lock and screen off
-#set $locker 'swaylock -f -i /home/sheerio/Pictures/ghost_in_the_shell_3faces.jpeg'
-set $locker 'swaylock -f -i /home/sheerio/Pictures/nw-the/gist-neo-city-914670.jpg'
+#set $locker 'swaylock -f -i /home/msheermo/Pictures/ghost_in_the_shell_3faces.jpeg'
+set $locker 'swaylock -f -i /home/msheermo/Pictures/nw-the/gist-neo-city-914670.jpg'
 exec swayidle -w \
     timeout 300 $locker \
     timeout 900 'swaymsg "output * dpms off"' \
       resume 'swaymsg "output * dpms on"' \
     before-sleep $locker
 
-# Launch apps in certain workspaces
-assign [class="^Spotify"] workspace 12
+# Target the app_id found in your terminal output
+assign [app_id="spotify"] workspace number 12
 
 
 # toggle between tiling and floating
@@ -139,18 +152,21 @@ bindsym $meta+l resize set width 40 ppt
 for_window [class=".*"] resize set width 33 ppt
 
 # Screenshots
-bindsym Mod4+Ctrl+p  exec ~/bin/grimshot --notify copy area clipboard
-bindsym Mod4+Mod1+p  exec ~/bin/grimshot --notify save output
-bindsym Mod4+Shift+p exec ~/bin/grimshot --notify save area
-bindsym Mod4+p       exec ~/bin/grimshot --notify save active
+bindsym Mod4+Ctrl+p  exec /usr/bin/grimshot --notify copy area clipboard $screenshot_dir/$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym Mod4+Mod1+p  exec /usr/bin/grimshot --notify save output $screenshot_dir/$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym Mod4+Shift+p exec /usr/bin/grimshot --notify save area $screenshot_dir/$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym Mod4+p       exec /usr/bin/grimshot --notify save active $screenshot_dir/$(date +%Y-%m-%d_%H-%M-%S).png
+
+
 
 # Ulauncher
 set $menu ulauncher-toggle
 
 ### Spotify Music
 bindsym $mod+m exec swaymsg exec flatpak run com.spotify.Client
-### Obsidian
-bindsym $mod+i exec swaymsg exec flatpak run md.obsidian.Obsidian
+### Sublime
+bindsym $mod+i exec swaymsg exec /usr/bin/subl
+
 
 # file manager
 bindsym $mod+n exec /usr/bin/nautilus
@@ -162,4 +178,6 @@ bindsym $mod+u exec xdg-open "https://mail.google.com/mail/u/0/?zx=fadtmohusi6u#
 
 
 include /etc/sway/config.d/*
-include /home/sheerio/dotfiles/sway/config.d/*
+include /home/msheermo/dotfiles/sway/config.d/*
+
+### Variables

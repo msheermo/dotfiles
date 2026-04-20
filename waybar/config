@@ -2,15 +2,17 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 20, // Waybar height (to be removed for auto height)
+    "height":30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         "sway/workspaces",
         "sway/scratchpad",
-        "sway/mode"
+        "sway/mode",
+        "custom/spotify"
     ],
+
     "modules-center": [
         "custom/spotify"
 
@@ -181,40 +183,39 @@
     //     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     // },
     "custom/spotify": {
-        "interval": 1,
+        "format": "{}",
         "return-type": "json",
-        "exec": "/home/sheerio/dotfiles/waybar/modules/spotify.sh",
-        "exec-if": "pgrep spotify",
-        "escape": true,
-        "on-click": "playerctl play-pause",
-        "on-click-right": "playerctl next",
-        "on-click-middle": "playerctl previous"
-        },
-    "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		  }
-    },
-    "custom/pomobar": {
-        "format": "{} {icon}",
-        "format-icons": {
-          "idle": "",
-          "paused": "",
-          "work": "",
-          "short_break": "",
-          "long_break": ""
-        },
+        /* Change this line: -f looks for the string anywhere in the process command */
+        "exec-if": "pgrep -f spotify",
+        "exec": "/home/msheermo/dotfiles/waybar/modules/spotify.sh",
         "interval": 1,
-        "exec": "~/dotfiles/waybar/modules/pomobar-cli status",
-        "on-click": "~/dotfiles/waybar/modules/pomobar-cli toggle",
-        "on-click-right": "~/dotfiles/waybar/modules/pomobar-cli reset",
-        "return-type": "json"
-      }
+        "escape": true
+    },
+  //   "custom/power": {
+  //       "format" : "⏻ ",
+		// "tooltip": false,
+		// "menu": "on-click",
+		// "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		// "menu-actions": {
+		// 	"shutdown": "shutdown",
+		// 	"reboot": "reboot",
+		// 	"suspend": "systemctl suspend",
+		// 	"hibernate": "systemctl hibernate"
+		//   }
+    },
+    // "custom/pomobar": {
+    //     "format": "{} {icon}",
+    //     "format-icons": {
+    //       "idle": "",
+    //       "paused": "",
+    //       "work": "",
+    //       "short_break": "",
+    //       "long_break": ""
+    //     },
+    //     "interval": 1,
+    //     "exec": "~/dotfiles/waybar/modules/pomobar-cli status",
+    //     "on-click": "~/dotfiles/waybar/modules/pomobar-cli toggle",
+    //     "on-click-right": "~/dotfiles/waybar/modules/pomobar-cli reset",
+    //     "return-type": "json"
+    //   }
 }

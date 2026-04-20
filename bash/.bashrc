@@ -16,7 +16,7 @@ export PATH
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-export PATH=$PATH:/home/sheerio/bin/
+export PATH=$PATH:/home/msheermo/bin/
 alias ls='ls --color=auto'
 alias l.='ls -d .* --color=auto'
 alias grep='grep --color=auto'
@@ -57,7 +57,3 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
-
-complete -C /usr/bin/terraform terraform
-export TUTORIAL_HOME=/home/sheerio/demo-apps
-export TUTORIAL_HOME=/home/sheerio/demo-apps/demo-apps

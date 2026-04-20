@@ -1,18 +1,18 @@
-# Mouse utility (why doesn't it hide...)
-exec swaymsg "workspace 12; exec /usr/bin/ckb-next"
+# Mouse utility
+assign [app_id="ckb-next"] workspace number 12
+
+# start in background; --background is an option in ckb-next not sway; see man ckb-next
+exec /usr/bin/ckb-next --background
 
 # wlsunset replaces gammastep
 exec wlsunset -l 52.3 -L4.9 -T 6500 -t 3000
 #exec gammastep-indicator
 
-# pCloud drive
-exec /home/sheerio/bin/pCloud.AppImage
-
 exec GDK_BACKEND=wayland ulauncher --hide-window
 for_window [app_id="ulauncher"] floating enable, border none
 
 # Autotiling see: https://github.com/nwg-piotr/autotiling
-exec_always ~/bin/autotiling
+#exec_always ~/bin/autotiling
 
 # nm applet
 exec nm-applet --indicator
