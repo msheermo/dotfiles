@@ -1,0 +1,10 @@
+[Unit]
+Description=Waypipe Vsock Client for VM
+After=sway.service
+
+[Service]
+ExecStart=/usr/bin/waypipe --vsock -s 1234 client
+Restart=always
+
+[Install]
+WantedBy=sway-session.target

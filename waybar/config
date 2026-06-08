@@ -9,8 +9,7 @@
     "modules-left": [
         "sway/workspaces",
         "sway/scratchpad",
-        "sway/mode",
-        "custom/spotify"
+        "sway/mode"
     ],
 
     "modules-center": [
@@ -183,14 +182,22 @@
     //     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     // },
     "custom/spotify": {
-        "format": "{}",
-        "return-type": "json",
-        /* Change this line: -f looks for the string anywhere in the process command */
-        "exec-if": "pgrep -f spotify",
-        "exec": "/home/msheermo/dotfiles/waybar/modules/spotify.sh",
-        "interval": 1,
-        "escape": true
-    },
+            "format": "{}",
+            "return-type": "json",
+            "exec-if": "pgrep -f spotify",
+            "exec": "/home/msheermo/dotfiles/waybar/modules/spotify.sh",
+            "interval": 1,
+            "escape": true,
+
+            // Mouse Clicks
+            "on-click": "playerctl -p spotify play-pause",
+            "on-click-right": "playerctl -p spotify next",
+            "on-click-middle": "playerctl -p spotify previous",
+
+            // Mouse Wheel Volume Control
+            "on-scroll-up": "playerctl -p spotify volume 0.05+",
+            "on-scroll-down": "playerctl -p spotify volume 0.05-"
+        }
   //   "custom/power": {
   //       "format" : "⏻ ",
 		// "tooltip": false,
