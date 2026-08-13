@@ -44,7 +44,7 @@ alias docker=podman
 fortune -a| cowsay -s
 # kcli autocomplete
 eval "$(register-python-argcomplete kcli)"
-
+alias doc-qa="cd ~/llm-playground/doc-qa && source .venv/bin/activate"
 
 if [ -f `which powerline-daemon` ]; then
   powerline-daemon -q

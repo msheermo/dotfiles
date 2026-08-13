@@ -1,9 +1,11 @@
 ### Monitor output configuration wit HDMI
 output 'BOE 0x09BA Unknown' resolution 2560x1600 position 0 0
 output 'Invalid Vendor Codename - RTK USB C2 0x01010101' resolution 3840x2400 position 2560 0 scale 1.5
+output 'Wacom Tech Wacom DTC141 5IT21X1002077' resolution 1920x1080 scale 1.0
 
 ### bind 1-2 to laptop
 workspace 1 output 'BOE 0x09BA Unknown'
 workspace 2 output 'BOE 0x09BA Unknown'
+workspace 7 output 'Wacom Tech Wacom DTC141 5IT21X1002077'
 workspace 11 output 'Invalid Vendor Codename - RTK USB C2 0x01010101'
 workspace 12 output 'Invalid Vendor Codename - RTK USB C2 0x01010101'

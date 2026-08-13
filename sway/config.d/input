@@ -10,3 +10,8 @@ input type:touchpad {
     natural_scroll disabled
     scroll_method two_finger
 }
+
+
+### Wacom One 14
+input type:tablet_tool map_to_output 'Wacom Tech Wacom DTC141 5IT21X1002077'
+input type:tablet_pad map_to_output 'Wacom Tech Wacom DTC141 5IT21X1002077'
