@@ -16,3 +16,4 @@ vim.opt.smartcase = true       -- Override ignorecase if search contains upperca
 vim.opt.termguicolors = true   -- Enable 24-bit RGB colors
 vim.opt.signcolumn = "yes"     -- Keep sign column open to avoid layout shifts
 vim.opt.updatetime = 250       -- Faster completion and error popups (ms)
+

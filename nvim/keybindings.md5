@@ -1,0 +1,27 @@
+# Neovim Keybindings Reference
+
+Leader Key: Space
+
+## File Explorer (nvim-tree)
+- Space + e: Toggle file explorer sidebar
+- Enter or o (inside tree): Open selected file or toggle directory
+
+## Search and Discovery (telescope.nvim)
+- Space + f + f: Find files by name
+- Space + f + g: Live grep (search text inside files)
+- Space + f + b: Search open buffers
+- Ctrl + o (inside Telescope): Open file in default external application (xdg-open)
+- Tab (inside Telescope): Toggle multi-select mark on highlighted files
+- Ctrl + q (inside Telescope): Send marked files to Quickfix list
+
+## Tab Bar Navigation (bufferline.nvim)
+- Shift + l: Switch to next tab on the right
+- Shift + h: Switch to previous tab on the left
+
+## Maintenance Commands
+- :Lazy check: Check for available plugin updates
+- :Lazy update: Update plugins and refresh lockfile
+- :Lazy restore: Restore plugins matching lockfile
+- :TSUpdate: Update and recompile Treesitter parsers
+
+
