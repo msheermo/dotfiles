@@ -1,0 +1,7 @@
+cluster: ocp
+domain: lab.internal
+ctlplanes: 1
+ctlplane_numcpus: 8
+ctlplane_memory: 32768
+ctlplane_disk_size: 120
+net: lab-net
