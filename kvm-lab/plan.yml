@@ -1,0 +1,26 @@
+fedora-vm:
+  image: fedora44
+  numcpus: 2
+  memory: 4096
+  disks:
+    - size: 30
+  nets:
+    - lab-net
+
+rhel-latest:
+  image: rhel10
+  numcpus: 2
+  memory: 4096
+  disks:
+    - size: 20
+  nets:
+    - lab-net
+
+rhel-n1:
+  image: rhel9
+  numcpus: 2
+  memory: 4096
+  disks:
+    - size: 20
+  nets:
+    - lab-net

@@ -1,0 +1,15 @@
+<network xmlns:dnsmasq='http://libvirt.org/schemas/network/dnsmasq/1.0'>
+  <name>lab-net</name>
+  <forward mode='nat'/>
+  <bridge name='virbr-lab' stp='on' delay='0'/>
+  <domain name='lab.internal' localOnly='yes'/>
+  <ip address='10.10.50.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='10.10.50.10' end='10.10.50.250'/>
+    </dhcp>
+  </ip>
+  <dnsmasq:options>
+    <dnsmasq:option value='address=/apps.ocp.lab.internal/10.10.50.50'/>
+    <dnsmasq:option value='address=/api.ocp.lab.internal/10.10.50.50'/>
+  </dnsmasq:options>
+</network>
